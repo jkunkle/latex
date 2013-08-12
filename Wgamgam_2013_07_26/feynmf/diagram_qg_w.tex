@@ -1,0 +1,20 @@
+\documentclass{article}
+\usepackage[width=10cm,height=4cm]{geometry}
+\usepackage{feynmf}
+\thispagestyle{empty}
+\begin{document}
+\begin{fmffile}{METAFeyn_qg_w}
+      \begin{fmfgraph*}(100, 55)
+         \fmfleftn{i}{2} \fmfrightn{o}{3}
+         \fmflabel{$q$}{i1}\fmflabel{$g$}{i2}
+         \fmf{fermion}{i1,v1}
+         \fmf{fermion,tension=1.5}{v1,v2}
+         \fmf{fermion,tension=0.5}{v2,o1}
+         \fmf{gluon}{i2,v1}
+         \fmf{boson,tension=1.7}{v2,v3}
+         \fmf{fermion}{v3,o2}
+         \fmf{fermion}{v3,o3}
+      \end{fmfgraph*}
+\end{fmffile}
+\end{document}
+

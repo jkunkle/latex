@@ -1,0 +1,19 @@
+\documentclass{article}
+\usepackage[width=10cm,height=4cm]{geometry}
+\usepackage{feynmf}
+\thispagestyle{empty}
+\begin{document}
+\begin{fmffile}{METAFeyn_qq_w}
+ \begin{figure}[!ht]
+      \begin{fmfgraph*}(100, 55)
+         \fmfleftn{i}{2} \fmfrightn{o}{2}
+         \fmflabel{$q$}{i1}\fmflabel{$\bar{q}$}{i2}
+         \fmf{fermion}{i1,v1,i2}
+         \fmf{boson}{v1,v2}
+         \fmf{fermion}{o1,v2,o2}
+      \end{fmfgraph*}
+  \end{figure}
+\end{fmffile}
+\end{document}
+
+

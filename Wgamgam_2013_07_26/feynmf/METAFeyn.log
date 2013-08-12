@@ -1,0 +1,50 @@
+This is METAFONT, Version 2.718281 (TeX Live 2009/Debian) (base=mf 2011.12.4)  30 JUL 2013 01:01
+**\mode:=localfont; mag:=1; input METAFeyn
+(METAFeyn.mf (/usr/share/texmf/metafont/feynmf/feynmf.mf)
+:1:\fmfL(4.98106,-3.45296,rt){$q$}%
+:1:\fmfL(4.98106,58.4986,rb){$\bar {q}$}%
+:1:\fmfL(94.99243,-3.45296,lt){$\gamma $}%
+:1:\fmfL(104.78583,16.42046,l){$\gamma $}% [1]
+:2:\fmfL(4.98106,-3.45296,rt){$q$}%
+:2:\fmfL(4.98106,58.4986,rb){$\bar {q}$}%
+:2:\fmfL(104.78572,38.62573,l){$\gamma $}% [2]
+:3:\fmfL(4.98106,-3.45296,rt){$q$}%
+:3:\fmfL(4.98106,58.4986,rb){$\bar {q}$}%
+:3:\fmfL(104.78572,38.62573,l){$\gamma $}%
+:3:\fmfL(94.99243,58.4986,lb){$\gamma $}% [3]
+:4:\fmfL(4.98106,-3.45296,rt){$q$}%
+:4:\fmfL(4.98106,58.4986,rb){$\bar {q}$}%
+:4:\fmfL(94.99243,-3.45296,lt){$\gamma $}%
+:4:\fmfL(104.78572,38.62573,l){$\gamma $}% [4]
+:5:\fmfL(4.98106,-3.45296,rt){$q$}%
+:5:\fmfL(4.98106,58.4986,rb){$\bar {q}$}%
+:5:\fmfL(94.99243,-3.45296,lt){$\gamma $}%
+:5:\fmfL(104.78583,16.42046,l){$\gamma $}% [5]
+:6:\fmfL(4.98106,-3.45296,rt){$q$}%
+:6:\fmfL(4.98106,58.4986,rb){$\bar {q}$}%
+:6:\fmfL(94.99243,-3.45296,lt){$\gamma $}%
+:6:\fmfL(104.78583,16.42046,l){$\gamma $}% [6]
+:7:\fmfL(4.98106,-3.45296,rt){$q$}%
+:7:\fmfL(4.98106,58.4986,rb){$\bar {q}$}%
+:7:\fmfL(94.99243,-3.45296,lt){$\gamma $}%
+:7:\fmfL(104.78583,16.42046,l){$\gamma $}% [7]
+:8:\fmfL(4.98106,-3.45296,rt){$q$}%
+:8:\fmfL(4.98106,58.4986,rb){$g$}% [8]
+:9:\fmfL(4.98106,-3.45296,rt){$q$}%
+:9:\fmfL(4.98106,58.4986,rb){$g$}% [9]
+:10:\fmfL(4.98106,-3.45296,rt){$q$}%
+:10:\fmfL(4.98106,58.4986,rb){$g$}% [10]
+:11:\fmfL(4.98106,-3.45296,rt){$q$}%
+:11:\fmfL(4.98106,58.4986,rb){$g$}% [11] ) 
+Here is how much of METAFONT's memory you used:
+ 914 strings out of 5275
+ 8785 string characters out of 70080
+ 39099 words of memory out of 3000000
+ 1378 symbolic tokens out of 9500
+ 14i,67n,90r,28p,134b stack positions out of 300i,300n,1000r,150p,200000b
+ 
+(You used 2w,2h,1d,1i,0l,0k,0e,0p metric file positions
+  out of 256w,16h,16d,64i,15000l,2500k,256e,60p)
+
+Font metrics written on METAFeyn.tfm.
+Output written on METAFeyn.600gf (11 characters, 47552 bytes).

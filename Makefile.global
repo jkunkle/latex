@@ -1,0 +1,11 @@
+OBJFILES := $(patsubst %.tex,%.pdf,$(wildcard *.tex))
+
+beamer : $(OBJFILES)
+	
+%.pdf : %.tex
+	pdflatex $^ 
+	pdflatex $^ 
+	/home/jkunkle/bin/isRunning $@
+
+clean :
+	rm *.pdf  

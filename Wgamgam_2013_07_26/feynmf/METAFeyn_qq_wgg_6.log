@@ -1,0 +1,19 @@
+This is METAFONT, Version 2.718281 (TeX Live 2009/Debian) (base=mf 2011.12.4)  30 JUL 2013 01:01
+**\mode:=localfont; mag:=1; input METAFeyn_qq_wgg_6
+(METAFeyn_qq_wgg_6.mf (/usr/share/texmf/metafont/feynmf/feynmf.mf)
+:1:\fmfL(4.98106,-3.45296,rt){$q$}%
+:1:\fmfL(4.98106,58.4986,rb){$\bar {q}$}%
+:1:\fmfL(94.99243,-3.45296,lt){$\gamma $}%
+:1:\fmfL(104.78583,16.42046,l){$\gamma $}% [1] ) 
+Here is how much of METAFONT's memory you used:
+ 631 strings out of 5275
+ 7329 string characters out of 70080
+ 36491 words of memory out of 3000000
+ 1378 symbolic tokens out of 9500
+ 14i,67n,74r,28p,143b stack positions out of 300i,300n,1000r,150p,200000b
+ 
+(You used 2w,2h,1d,1i,0l,0k,0e,0p metric file positions
+  out of 256w,16h,16d,64i,15000l,2500k,256e,60p)
+
+Font metrics written on METAFeyn_qq_wgg_6.tfm.
+Output written on METAFeyn_qq_wgg_6.600gf (1 character, 4284 bytes).

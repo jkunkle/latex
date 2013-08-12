@@ -1,0 +1,106 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2011.12.4)  30 JUL 2013 01:01
+entering extended mode
+ %&-line parsing enabled.
+**diagrams.tex
+(./diagrams.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, loaded.
+(/usr/share/texmf-texlive/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texmf-texlive/tex/latex/base/size10.clo
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/feynmf/feynmf.sty
+Package: feynmf 1996/12/02 v1.08 LaTeX/Metafont Feynman Diagram Package (ohl)
+\@outfmf=\write3
+\fmfbuf@=\toks14
+\c@fmfgraph=\count87
+\grep@infile=\read1
+\grep@outfile=\write4
+) (./diagrams.aux)
+\openout1 = `diagrams.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+
+
+feynmf: File METAFeyn.tfm found.
+feynmf: Nevertheless, if the picture has changed, reprocess METAFeyn.mf.
+feynmf: If dimension have changed, reprocess METAFeyn.mf and diagrams.tex.
+\openout3 = `METAFeyn.mf'.
+
+\openout4 = `METAFeyn.t1'.
+
+(./METAFeyn.t1
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 3.
+)
+\openout4 = `METAFeyn.t2'.
+
+ (./METAFeyn.t2)
+\openout4 = `METAFeyn.t3'.
+
+ (./METAFeyn.t3)
+\openout4 = `METAFeyn.t4'.
+
+ (./METAFeyn.t4)
+\openout4 = `METAFeyn.t5'.
+
+ (./METAFeyn.t5)
+\openout4 = `METAFeyn.t6'.
+
+(./METAFeyn.t6)
+\openout4 = `METAFeyn.t7'.
+
+ (./METAFeyn.t7)
+\openout4 = `METAFeyn.t8'.
+
+ (./METAFeyn.t8)
+\openout4 = `METAFeyn.t9'.
+
+ (./METAFeyn.t9)
+\openout4 = `METAFeyn.t10'.
+
+ (./METAFeyn.t10)
+\openout4 = `METAFeyn.t11'.
+
+ (./METAFeyn.t11)
+
+LaTeX Warning: Float too large for page by 25.0pt on input line 172.
+
+[1] (./diagrams.aux) ) 
+Here is how much of TeX's memory you used:
+ 412 strings out of 495062
+ 4134 string characters out of 1182644
+ 53912 words of memory out of 3000000
+ 3636 multiletter control sequences out of 15000+50000
+ 3664 words of font info for 15 fonts, out of 3000000 for 9000
+ 28 hyphenation exceptions out of 8191
+ 27i,11n,25p,158b,249s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on diagrams.dvi (1 page, 1232 bytes).

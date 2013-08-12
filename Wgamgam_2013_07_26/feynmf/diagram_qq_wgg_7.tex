@@ -1,0 +1,24 @@
+\documentclass{article}
+\usepackage[width=10cm,height=4cm]{geometry}
+\usepackage{feynmf}
+\thispagestyle{empty}
+\begin{document}
+\begin{fmffile}{METAFeyn_qq_wgg_1}
+ \begin{figure}[!ht]
+      \begin{fmfgraph*}(100, 55)
+         \fmfleftn{i}{2} \fmfrightn{o}{4}
+         \fmflabel{$q$}{i1}\fmflabel{$\bar{q}$}{i2}
+         \fmflabel{$\gamma$}{o1}\fmflabel{$\gamma$}{o2}
+         \fmf{fermion}{i1,v1,i2}
+         \fmf{boson}{v1,v2}
+         \fmf{boson}{v2,v3}
+         \fmf{fermion}{v3,o3}
+         \fmf{fermion}{v3,o4}
+         \fmffreeze
+         \fmf{boson}{v2,o1}
+         \fmf{boson}{v2,o2}
+      \end{fmfgraph*}
+  \end{figure}
+\end{fmffile}
+\end{document}
+
