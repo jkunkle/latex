@@ -1,0 +1,2242 @@
+\documentclass{beamer}
+
+%\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{xspace}
+\usepackage{amsmath}
+\usetheme{Madrid}
+
+\input{../highpt_macros}
+
+\title[ EltoPhFF ]
+{ EltoPhFF }
+
+\author[Josh Kunkle]
+  {Josh Kunkle}
+
+\institute[UMD]{University of Maryland}
+
+\date[February 03, 2014] % (optional)
+{ 
+  \vspace{0.5cm} \begin{center}\includegraphics[width=0.3\textwidth]{../UMDLogo}\end{center}
+  \vspace{0.5cm}
+}
+
+\begin{document}
+
+\maketitle
+
+\fr{ Motivation } {
+
+    \begin{itemize}
+        \item $Z\to ee$ events present a large background to electron + $>$ 0 photon selections
+        \item This background is principly from electrons that fake photons
+        \item Use data driven background estimate to check MC modeling of fakes
+        \item Such an estimate can provide higher statistics than MC
+    \end{itemize}
+
+}
+
+\fr{ Example from $W\gamma\gamma$ analysis } {
+
+}
+
+\fr{ Composition of $Z\to ee$ background, $e + \gamma$ events } {
+
+    \begin{center}
+        \includegraphics[width=\textwidth]{Figures/PhotonFakeDiagJustDiagTEST.pdf}
+    \end{center}
+
+}
+
+\fr{ Composition of $Z\to ee$ background, $e + \gamma$ events } {
+
+
+    Plot
+}
+
+\fr{ Estimating $Z \to ee$ background } {
+
+    \begin{itemize}
+        \item Derive a relative fake factor using $Z\to ee$ events where the electron passes the nominal ID, or passes the photon ID (mutually exclusive)
+    \end{itemize}
+    
+    \begin{center}
+        For all true $Z\to ee$ events the possible reonstructed states are
+        \includegraphics[width=0.5\textwidth]{Figures/ElectronPhotonBox.pdf}
+    \end{center}
+
+
+}
+
+\fr{ Probability to reconstruct a photon fake } {
+
+
+    \begin{itemize}
+        \item $\epsilon_{E,G}^{i}$ represents the rate to reconstruct an electron or photon (E, G) for true electron $i$
+        \item $\epsilon$ may depend on kinematic variables ($p_{T}$, $\eta$, ...).  Keep $\epsilon^{1}$ and $\epsilon^{2}$ separate for this reason
+    \end{itemize}
+
+    The number of electron plus photon events is given by,
+    \begin{equation}
+        N_{EG} = N_{Z} \left( \epsilon_{E}^{1}\epsilon_{G}^{2} + \epsilon_{G}^{1}\epsilon_{E}^{2}\right) 
+    \end{equation} 
+    And the number of two electron events is,
+    \begin{equation}
+      N_{EE} = N_{Z} \epsilon_{E}^{1}\epsilon_{E}^{2}
+    \end{equation} 
+      Plug in to remove $N_{Z}$
+    \begin{equation}
+    \frac{N_{EG}}{N_{EE}} = \frac{\epsilon_{G}^{1}}{\epsilon_{E}^{1}} + \frac{ \epsilon_{G}^{2}}{\epsilon_{E}^{2}} 
+    \end{equation} 
+
+    We therefore need $N_{EE}$ and the ratio of the electron reconstruction efficiency to the photon reconstruction efficiency (fake factor)
+      
+}
+
+\fr{ Fake factor determination } {
+
+    \begin{itemize}     
+        \item Select events with at least one tag electron
+        \begin{itemize}
+            \item \pt $>$ 30 GeV, trigger matched, pass trigger MVA ID
+        \end{itemize}
+        \item Probes are electrons passing the MVA ID or photons that pass the nominal loose ID
+        \item In di-electron events both electrons are used if they both pass the tag selection
+        \begin{itemize}
+            \item Electrons : \pt $>$ 15 GeV, pass MVA ID
+            \item Photons : \pt $>$ 15 GeV, pass loose ID
+        \end{itemize}
+        \item Require the di-object mass to be within 5 GeV of the Z mass
+        \item apply additional electron veto ( MVA ID, \pt $>$ 10 GeV )
+        \item fake factor is the ratio of the number of probe photons to probe electrons (binned in $\pt$, $\eta$ )
+    \end{itemize}
+        
+
+}
+
+\fr{ Example -- mid \pt } {
+
+}
+
+\fr{ Example -- low \pt } {
+
+}
+
+\fr{ 1D $\pt$, $\eta$ results } {
+
+
+}
+
+\fr{ Is a 1D binning sufficient? } {
+
+
+}
+
+\fr{ 2D binning results } {
+
+    Use wider binning to balance statistics 
+
+}
+
+\fr{ Tag $\pt$ dependence } {
+
+}
+
+\fr{Closure test } {
+
+}
+
+
+
+\fr{ Original binning } {
+
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_15_20_eta_0.000000_0.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_15_20_eta_0.200000_0.400000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_15_20_eta_0.400000_0.600000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_15_20_eta_0.600000_0.800000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_15_20_eta_0.800000_1.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_15_20_eta_1.000000_1.100000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_15_20_eta_1.100000_1.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_15_20_eta_1.200000_1.300000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_15_20_eta_1.300000_1.400000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_15_20_eta_1.400000_1.479000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_15_20_eta_1.479000_1.566000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_15_20_eta_1.566000_1.700000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_15_20_eta_1.700000_1.800000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_15_20_eta_1.800000_1.900000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_15_20_eta_1.900000_2.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_15_20_eta_2.000000_2.100000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_15_20_eta_2.100000_2.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_15_20_eta_2.200000_2.300000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_15_20_eta_2.300000_2.350000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_15_20_eta_2.350000_2.400000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_15_20_eta_2.400000_2.450000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_15_20_eta_2.450000_2.500000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_20_25_eta_0.000000_0.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_20_25_eta_0.200000_0.400000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_20_25_eta_0.400000_0.600000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_20_25_eta_0.600000_0.800000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_20_25_eta_0.800000_1.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_20_25_eta_1.000000_1.100000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_20_25_eta_1.100000_1.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_20_25_eta_1.200000_1.300000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_20_25_eta_1.300000_1.400000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_20_25_eta_1.400000_1.479000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_20_25_eta_1.479000_1.566000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_20_25_eta_1.566000_1.700000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_20_25_eta_1.700000_1.800000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_20_25_eta_1.800000_1.900000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_20_25_eta_1.900000_2.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_20_25_eta_2.000000_2.100000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_20_25_eta_2.100000_2.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_20_25_eta_2.200000_2.300000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_20_25_eta_2.300000_2.350000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_20_25_eta_2.350000_2.400000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_20_25_eta_2.400000_2.450000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_20_25_eta_2.450000_2.500000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_25_30_eta_0.000000_0.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_25_30_eta_0.200000_0.400000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_25_30_eta_0.400000_0.600000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_25_30_eta_0.600000_0.800000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_25_30_eta_0.800000_1.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_25_30_eta_1.000000_1.100000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_25_30_eta_1.100000_1.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_25_30_eta_1.200000_1.300000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_25_30_eta_1.300000_1.400000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_25_30_eta_1.400000_1.479000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_25_30_eta_1.479000_1.566000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_25_30_eta_1.566000_1.700000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_25_30_eta_1.700000_1.800000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_25_30_eta_1.800000_1.900000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_25_30_eta_1.900000_2.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_25_30_eta_2.000000_2.100000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_25_30_eta_2.100000_2.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_25_30_eta_2.200000_2.300000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_25_30_eta_2.300000_2.350000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_25_30_eta_2.350000_2.400000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_25_30_eta_2.400000_2.450000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_25_30_eta_2.450000_2.500000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_30_35_eta_0.000000_0.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_30_35_eta_0.200000_0.400000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_30_35_eta_0.400000_0.600000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_30_35_eta_0.600000_0.800000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_30_35_eta_0.800000_1.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_30_35_eta_1.000000_1.100000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_30_35_eta_1.100000_1.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_30_35_eta_1.200000_1.300000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_30_35_eta_1.300000_1.400000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_30_35_eta_1.400000_1.479000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_30_35_eta_1.479000_1.566000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_30_35_eta_1.566000_1.700000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_30_35_eta_1.700000_1.800000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_30_35_eta_1.800000_1.900000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_30_35_eta_1.900000_2.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_30_35_eta_2.000000_2.100000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_30_35_eta_2.100000_2.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_30_35_eta_2.200000_2.300000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_30_35_eta_2.300000_2.350000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_30_35_eta_2.350000_2.400000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_30_35_eta_2.400000_2.450000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_30_35_eta_2.450000_2.500000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_35_40_eta_0.000000_0.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_35_40_eta_0.200000_0.400000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_35_40_eta_0.400000_0.600000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_35_40_eta_0.600000_0.800000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_35_40_eta_0.800000_1.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_35_40_eta_1.000000_1.100000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_35_40_eta_1.100000_1.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_35_40_eta_1.200000_1.300000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_35_40_eta_1.300000_1.400000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_35_40_eta_1.400000_1.479000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_35_40_eta_1.479000_1.566000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_35_40_eta_1.566000_1.700000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_35_40_eta_1.700000_1.800000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_35_40_eta_1.800000_1.900000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_35_40_eta_1.900000_2.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_35_40_eta_2.000000_2.100000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_35_40_eta_2.100000_2.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_35_40_eta_2.200000_2.300000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_35_40_eta_2.300000_2.350000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_35_40_eta_2.350000_2.400000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_35_40_eta_2.400000_2.450000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_35_40_eta_2.450000_2.500000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_40_45_eta_0.000000_0.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_40_45_eta_0.200000_0.400000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_40_45_eta_0.400000_0.600000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_40_45_eta_0.600000_0.800000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_40_45_eta_0.800000_1.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_40_45_eta_1.000000_1.100000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_40_45_eta_1.100000_1.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_40_45_eta_1.200000_1.300000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_40_45_eta_1.300000_1.400000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_40_45_eta_1.400000_1.479000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_40_45_eta_1.479000_1.566000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_40_45_eta_1.566000_1.700000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_40_45_eta_1.700000_1.800000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_40_45_eta_1.800000_1.900000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_40_45_eta_1.900000_2.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_40_45_eta_2.000000_2.100000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_40_45_eta_2.100000_2.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_40_45_eta_2.200000_2.300000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_40_45_eta_2.300000_2.350000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_40_45_eta_2.350000_2.400000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_40_45_eta_2.400000_2.450000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_40_45_eta_2.450000_2.500000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_45_50_eta_0.000000_0.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_45_50_eta_0.200000_0.400000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_45_50_eta_0.400000_0.600000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_45_50_eta_0.600000_0.800000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_45_50_eta_0.800000_1.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_45_50_eta_1.000000_1.100000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_45_50_eta_1.100000_1.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_45_50_eta_1.200000_1.300000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_45_50_eta_1.300000_1.400000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_45_50_eta_1.400000_1.479000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_45_50_eta_1.479000_1.566000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_45_50_eta_1.566000_1.700000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_45_50_eta_1.700000_1.800000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_45_50_eta_1.800000_1.900000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_45_50_eta_1.900000_2.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_45_50_eta_2.000000_2.100000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_45_50_eta_2.100000_2.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_45_50_eta_2.200000_2.300000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_45_50_eta_2.300000_2.350000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_45_50_eta_2.350000_2.400000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_45_50_eta_2.400000_2.450000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_45_50_eta_2.450000_2.500000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_50_60_eta_0.000000_0.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_50_60_eta_0.200000_0.400000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_50_60_eta_0.400000_0.600000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_50_60_eta_0.600000_0.800000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_50_60_eta_0.800000_1.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_50_60_eta_1.000000_1.100000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_50_60_eta_1.100000_1.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_50_60_eta_1.200000_1.300000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_50_60_eta_1.300000_1.400000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_50_60_eta_1.400000_1.479000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_50_60_eta_1.479000_1.566000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_50_60_eta_1.566000_1.700000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_50_60_eta_1.700000_1.800000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_50_60_eta_1.800000_1.900000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_50_60_eta_1.900000_2.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_50_60_eta_2.000000_2.100000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_50_60_eta_2.100000_2.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_50_60_eta_2.200000_2.300000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_50_60_eta_2.300000_2.350000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_50_60_eta_2.350000_2.400000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_50_60_eta_2.400000_2.450000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_50_60_eta_2.450000_2.500000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_60_70_eta_0.000000_0.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_60_70_eta_0.200000_0.400000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_60_70_eta_0.400000_0.600000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_60_70_eta_0.600000_0.800000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_60_70_eta_0.800000_1.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_60_70_eta_1.000000_1.100000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_60_70_eta_1.100000_1.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_60_70_eta_1.200000_1.300000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_60_70_eta_1.300000_1.400000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_60_70_eta_1.400000_1.479000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_60_70_eta_1.479000_1.566000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_60_70_eta_1.566000_1.700000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_60_70_eta_1.700000_1.800000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_60_70_eta_1.800000_1.900000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_60_70_eta_1.900000_2.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_60_70_eta_2.000000_2.100000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_60_70_eta_2.100000_2.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_60_70_eta_2.200000_2.300000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_60_70_eta_2.300000_2.350000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_60_70_eta_2.350000_2.400000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_60_70_eta_2.400000_2.450000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_60_70_eta_2.450000_2.500000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_70_80_eta_0.000000_0.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_70_80_eta_0.200000_0.400000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_70_80_eta_0.400000_0.600000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_70_80_eta_0.600000_0.800000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_70_80_eta_0.800000_1.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_70_80_eta_1.000000_1.100000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_70_80_eta_1.100000_1.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_70_80_eta_1.200000_1.300000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_70_80_eta_1.300000_1.400000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_70_80_eta_1.400000_1.479000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_70_80_eta_1.479000_1.566000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_70_80_eta_1.566000_1.700000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_70_80_eta_1.700000_1.800000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_70_80_eta_1.800000_1.900000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_70_80_eta_1.900000_2.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_70_80_eta_2.000000_2.100000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_70_80_eta_2.100000_2.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_70_80_eta_2.200000_2.300000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_70_80_eta_2.300000_2.350000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_70_80_eta_2.350000_2.400000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_70_80_eta_2.400000_2.450000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_70_80_eta_2.450000_2.500000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_80_100_eta_0.000000_0.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_80_100_eta_0.200000_0.400000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_80_100_eta_0.400000_0.600000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_80_100_eta_0.600000_0.800000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_80_100_eta_0.800000_1.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_80_100_eta_1.000000_1.100000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_80_100_eta_1.100000_1.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_80_100_eta_1.200000_1.300000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_80_100_eta_1.300000_1.400000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_80_100_eta_1.400000_1.479000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_80_100_eta_1.479000_1.566000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_80_100_eta_1.566000_1.700000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_80_100_eta_1.700000_1.800000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_80_100_eta_1.800000_1.900000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_80_100_eta_1.900000_2.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_80_100_eta_2.000000_2.100000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_80_100_eta_2.100000_2.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_80_100_eta_2.200000_2.300000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_80_100_eta_2.300000_2.350000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_80_100_eta_2.350000_2.400000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_80_100_eta_2.400000_2.450000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_80_100_eta_2.450000_2.500000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_100_150_eta_0.000000_0.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_100_150_eta_0.200000_0.400000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_100_150_eta_0.400000_0.600000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_100_150_eta_0.600000_0.800000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_100_150_eta_0.800000_1.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_100_150_eta_1.000000_1.100000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_100_150_eta_1.100000_1.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_100_150_eta_1.200000_1.300000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_100_150_eta_1.300000_1.400000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_100_150_eta_1.400000_1.479000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_100_150_eta_1.479000_1.566000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_100_150_eta_1.566000_1.700000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_100_150_eta_1.700000_1.800000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_100_150_eta_1.800000_1.900000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_100_150_eta_1.900000_2.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_100_150_eta_2.000000_2.100000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_100_150_eta_2.100000_2.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_100_150_eta_2.200000_2.300000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_100_150_eta_2.300000_2.350000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_100_150_eta_2.350000_2.400000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_100_150_eta_2.400000_2.450000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_100_150_eta_2.450000_2.500000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_150_500_eta_0.000000_0.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_150_500_eta_0.200000_0.400000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_150_500_eta_0.400000_0.600000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_150_500_eta_0.600000_0.800000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_150_500_eta_0.800000_1.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_150_500_eta_1.000000_1.100000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_150_500_eta_1.100000_1.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_150_500_eta_1.200000_1.300000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_150_500_eta_1.300000_1.400000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_150_500_eta_1.400000_1.479000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_150_500_eta_1.479000_1.566000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_150_500_eta_1.566000_1.700000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_150_500_eta_1.700000_1.800000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_150_500_eta_1.800000_1.900000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_150_500_eta_1.900000_2.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_150_500_eta_2.000000_2.100000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_150_500_eta_2.100000_2.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_150_500_eta_2.200000_2.300000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_150_500_eta_2.300000_2.350000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_150_500_eta_2.350000_2.400000}.pdf}
+
+    \ec
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_150_500_eta_2.400000_2.450000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompare/{m_tagprobe_pt_150_500_eta_2.450000_2.500000}.pdf}
+
+        \column{0.5\textwidth}
+
+
+    \ec
+}
+
+\fr{ New binning } {
+
+}
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_15_20_eta_0.000000_1.479000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_15_20_eta_1.479000_1.566000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_15_20_eta_1.566000_2.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_15_20_eta_2.000000_2.100000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_15_20_eta_2.100000_2.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_15_20_eta_2.200000_2.300000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_15_20_eta_2.300000_2.350000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_15_20_eta_2.350000_2.400000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_15_20_eta_2.400000_2.450000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_15_20_eta_2.450000_2.500000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_20_25_eta_0.000000_1.479000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_20_25_eta_1.479000_1.566000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_20_25_eta_1.566000_2.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_20_25_eta_2.000000_2.100000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_20_25_eta_2.100000_2.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_20_25_eta_2.200000_2.300000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_20_25_eta_2.300000_2.350000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_20_25_eta_2.350000_2.400000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_20_25_eta_2.400000_2.450000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_20_25_eta_2.450000_2.500000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_25_30_eta_0.000000_1.479000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_25_30_eta_1.479000_1.566000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_25_30_eta_1.566000_2.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_25_30_eta_2.000000_2.100000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_25_30_eta_2.100000_2.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_25_30_eta_2.200000_2.300000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_25_30_eta_2.300000_2.350000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_25_30_eta_2.350000_2.400000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_25_30_eta_2.400000_2.450000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_25_30_eta_2.450000_2.500000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_30_35_eta_0.000000_1.479000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_30_35_eta_1.479000_1.566000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_30_35_eta_1.566000_2.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_30_35_eta_2.000000_2.100000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_30_35_eta_2.100000_2.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_30_35_eta_2.200000_2.300000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_30_35_eta_2.300000_2.350000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_30_35_eta_2.350000_2.400000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_30_35_eta_2.400000_2.450000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_30_35_eta_2.450000_2.500000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_35_40_eta_0.000000_1.479000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_35_40_eta_1.479000_1.566000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_35_40_eta_1.566000_2.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_35_40_eta_2.000000_2.100000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_35_40_eta_2.100000_2.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_35_40_eta_2.200000_2.300000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_35_40_eta_2.300000_2.350000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_35_40_eta_2.350000_2.400000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_35_40_eta_2.400000_2.450000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_35_40_eta_2.450000_2.500000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_40_45_eta_0.000000_1.479000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_40_45_eta_1.479000_1.566000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_40_45_eta_1.566000_2.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_40_45_eta_2.000000_2.100000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_40_45_eta_2.100000_2.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_40_45_eta_2.200000_2.300000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_40_45_eta_2.300000_2.350000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_40_45_eta_2.350000_2.400000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_40_45_eta_2.400000_2.450000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_40_45_eta_2.450000_2.500000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_45_50_eta_0.000000_1.479000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_45_50_eta_1.479000_1.566000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_45_50_eta_1.566000_2.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_45_50_eta_2.000000_2.100000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_45_50_eta_2.100000_2.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_45_50_eta_2.200000_2.300000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_45_50_eta_2.300000_2.350000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_45_50_eta_2.350000_2.400000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_45_50_eta_2.400000_2.450000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_45_50_eta_2.450000_2.500000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_50_500_eta_0.000000_1.479000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_50_500_eta_1.479000_1.566000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_50_500_eta_1.566000_2.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_50_500_eta_2.000000_2.100000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_50_500_eta_2.100000_2.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_50_500_eta_2.200000_2.300000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_50_500_eta_2.300000_2.350000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_50_500_eta_2.350000_2.400000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_50_500_eta_2.400000_2.450000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareRebin/{m_tagprobe_pt_50_500_eta_2.450000_2.500000}.pdf}
+
+    \ec
+}
+
+\fr{ New finer eta binning } {
+
+}
+
+
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_15_20_eta_0.000000_0.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_15_20_eta_0.200000_0.800000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_15_20_eta_0.800000_1.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_15_20_eta_1.200000_1.479000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_15_20_eta_1.479000_1.566000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_15_20_eta_1.566000_2.000000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_15_20_eta_2.000000_2.100000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_15_20_eta_2.100000_2.200000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_15_20_eta_2.200000_2.300000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_15_20_eta_2.300000_2.350000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_15_20_eta_2.350000_2.400000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_15_20_eta_2.400000_2.450000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_15_20_eta_2.450000_2.500000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_20_25_eta_0.000000_0.200000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_20_25_eta_0.200000_0.800000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_20_25_eta_0.800000_1.200000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_20_25_eta_1.200000_1.479000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_20_25_eta_1.479000_1.566000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_20_25_eta_1.566000_2.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_20_25_eta_2.000000_2.100000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_20_25_eta_2.100000_2.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_20_25_eta_2.200000_2.300000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_20_25_eta_2.300000_2.350000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_20_25_eta_2.350000_2.400000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_20_25_eta_2.400000_2.450000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_20_25_eta_2.450000_2.500000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_25_30_eta_0.000000_0.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_25_30_eta_0.200000_0.800000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_25_30_eta_0.800000_1.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_25_30_eta_1.200000_1.479000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_25_30_eta_1.479000_1.566000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_25_30_eta_1.566000_2.000000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_25_30_eta_2.000000_2.100000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_25_30_eta_2.100000_2.200000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_25_30_eta_2.200000_2.300000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_25_30_eta_2.300000_2.350000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_25_30_eta_2.350000_2.400000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_25_30_eta_2.400000_2.450000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_25_30_eta_2.450000_2.500000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_30_35_eta_0.000000_0.200000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_30_35_eta_0.200000_0.800000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_30_35_eta_0.800000_1.200000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_30_35_eta_1.200000_1.479000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_30_35_eta_1.479000_1.566000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_30_35_eta_1.566000_2.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_30_35_eta_2.000000_2.100000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_30_35_eta_2.100000_2.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_30_35_eta_2.200000_2.300000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_30_35_eta_2.300000_2.350000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_30_35_eta_2.350000_2.400000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_30_35_eta_2.400000_2.450000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_30_35_eta_2.450000_2.500000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_35_40_eta_0.000000_0.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_35_40_eta_0.200000_0.800000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_35_40_eta_0.800000_1.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_35_40_eta_1.200000_1.479000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_35_40_eta_1.479000_1.566000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_35_40_eta_1.566000_2.000000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_35_40_eta_2.000000_2.100000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_35_40_eta_2.100000_2.200000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_35_40_eta_2.200000_2.300000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_35_40_eta_2.300000_2.350000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_35_40_eta_2.350000_2.400000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_35_40_eta_2.400000_2.450000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_35_40_eta_2.450000_2.500000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_40_45_eta_0.000000_0.200000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_40_45_eta_0.200000_0.800000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_40_45_eta_0.800000_1.200000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_40_45_eta_1.200000_1.479000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_40_45_eta_1.479000_1.566000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_40_45_eta_1.566000_2.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_40_45_eta_2.000000_2.100000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_40_45_eta_2.100000_2.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_40_45_eta_2.200000_2.300000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_40_45_eta_2.300000_2.350000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_40_45_eta_2.350000_2.400000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_40_45_eta_2.400000_2.450000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_40_45_eta_2.450000_2.500000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_45_50_eta_0.000000_0.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_45_50_eta_0.200000_0.800000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_45_50_eta_0.800000_1.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_45_50_eta_1.200000_1.479000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_45_50_eta_1.479000_1.566000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_45_50_eta_1.566000_2.000000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_45_50_eta_2.000000_2.100000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_45_50_eta_2.100000_2.200000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_45_50_eta_2.200000_2.300000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_45_50_eta_2.300000_2.350000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_45_50_eta_2.350000_2.400000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_45_50_eta_2.400000_2.450000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_45_50_eta_2.450000_2.500000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_50_500_eta_0.000000_0.200000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_50_500_eta_0.200000_0.800000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_50_500_eta_0.800000_1.200000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_50_500_eta_1.200000_1.479000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_50_500_eta_1.479000_1.566000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_50_500_eta_1.566000_2.000000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_50_500_eta_2.000000_2.100000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_50_500_eta_2.100000_2.200000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_50_500_eta_2.200000_2.300000}.pdf}
+
+    \ec
+}
+\fr{  } {
+
+    \bc
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_50_500_eta_2.300000_2.350000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_50_500_eta_2.350000_2.400000}.pdf}
+
+        \column{0.5\textwidth}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_50_500_eta_2.400000_2.450000}.pdf}
+
+        \includegraphics[width=0.8\textwidth]{Plots/TAndPCompareNewBins/{m_tagprobe_pt_50_500_eta_2.450000_2.500000}.pdf}
+
+    \ec
+}
+\end{document}
